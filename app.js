@@ -1,14 +1,26 @@
 const express = require("express");
+const path = require("node:path");
 const app = express();
 const fs = require("fs");
 
 const port = 3000;
+
+// to read the quotes file
 let quotes = JSON.parse(fs.readFileSync("./quotes.json"));
+
+//prepparing the EJS
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
+//preparing public directory?
+const assetsPath = path.join(__dirname, "public");
+app.use(express.static(assetsPath));
 
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send(`${quotes.length}`);
+  // res.send(`${quotes.length}`);
+  res.render("index", { quotes });
 });
 app.get("/api", (req, res) => {
   res.status(200).json({ count: quotes.length, data: { quotes: quotes } });
