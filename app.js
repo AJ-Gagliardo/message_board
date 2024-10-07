@@ -18,6 +18,10 @@ app.use(express.static(assetsPath));
 
 app.use(express.json());
 
+//middleware to parse data
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.get("/", (req, res) => {
   // res.send(`${quotes.length}`);
   res.render("index", { quotes });
@@ -35,15 +39,22 @@ app.get("*", (req, res) => {
   res.send("Error 404, Page not found");
 });
 
+// const postQuote =
 app.post("/api", (req, res) => {
   // console.log(req.body);
   const newId = quotes[quotes.length - 1].id + 1;
   console.log(newId);
-  const newQuote = Object.assign({ id: newId }, req.body);
+  // const newQuote = Object.assign({ id: newId }, req.body);
+  const newQuote = {
+    id: newId,
+    quote: req.body.quote,
+    author: req.body.author,
+  };
+
   quotes.push(newQuote);
 
   fs.writeFile("./quotes.json", JSON.stringify(quotes), (err) => {
-    res.status(201).json({ status: success, data: { movie: newMovie } });
+    res.status(201).json({ status: success, data: { quote: newQuote } });
   });
   res.send("creating a post");
 });

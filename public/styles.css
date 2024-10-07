@@ -1,3 +1,23 @@
 .text1 {
   height: 30px;
 }
+
+.container {
+  /* background: burlywood; */
+  /* margin: auto auto 50% 50%; */
+  width: 100%;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.form1 {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto auto;
+}
+
+button {
+  margin-top: 8px;
+}
