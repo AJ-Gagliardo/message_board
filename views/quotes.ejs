@@ -1,6 +1,6 @@
+<p class="quotesTitle title">Quotes</p>
 <ul class="allQuotes">
-  <p>Quotes</p>
   <% quotes.map((quote)=>{ %>
-  <li class="singleQuote"><%= quote.quote %></li>
+  <li class="singleQuote">"<%= quote.quote %>" - <%=quote.author%></li>
   <% }) %>
 </ul>

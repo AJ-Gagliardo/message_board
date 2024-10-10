@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("node:path");
 const app = express();
 const fs = require("fs");
+require("dotenv").config();
 
 const port = 3000;
 
@@ -40,7 +41,7 @@ app.get("*", (req, res) => {
 });
 
 // const postQuote =
-app.post("/api", (req, res) => {
+app.post("/new", (req, res) => {
   // console.log(req.body);
   const newId = quotes[quotes.length - 1].id + 1;
   console.log(newId);
@@ -56,5 +57,5 @@ app.post("/api", (req, res) => {
   fs.writeFile("./quotes.json", JSON.stringify(quotes), (err) => {
     res.status(201).json({ status: success, data: { quote: newQuote } });
   });
-  res.send("creating a post");
+  res.redirect("/");
 });

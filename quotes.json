@@ -1,1 +1,14 @@
-[{"id":1,"quote":"Waste no more time arguing about what a good man should be. Be one.","author":"Marcus Aurelius","postedBy":"tu muai"},{"id":2,"quote":"The only way to do great work is to love what you do.","author":"Steve Jobs","postedBy":"john"},{"id":3,"quote":"Waste no more time arguing about what a good man should be. Be one."},{"id":4,"quote":"Waste no more time arguing about what a good man should be. Be one."}]
+[
+  {
+    "id": 1,
+    "quote": "Waste no more time arguing about what a good man should be. Be one.",
+    "author": "Marcus Aurelius",
+    "postedBy": "tu muai"
+  },
+  {
+    "id": 2,
+    "quote": "The only way to do great work is to love what you do.",
+    "author": "Steve Jobs",
+    "postedBy": "john"
+  }
+]
