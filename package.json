@@ -1,4 +1,11 @@
 {
+  "name": "message_board",
+  "version": "1.0.0",
+  "description": "A simple message board application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",

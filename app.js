@@ -4,7 +4,8 @@ const app = express();
 const fs = require("fs");
 require("dotenv").config();
 
-const port = 3000;
+const port = process.env.PORT || 3000;
+console.log(port);
 
 // to read the quotes file
 let quotes = JSON.parse(fs.readFileSync("./quotes.json"));
